@@ -1,0 +1,23 @@
+{
+  "name": "08-socket.io",
+  "version": "1.0.0",
+  "description": "![CF](http://i.imgur.com/7v5ASc8.png) LAB =================================================",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaityHeath/08-socket.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaityHeath/08-socket.io/issues"
+  },
+  "homepage": "https://github.com/CaityHeath/08-socket.io#readme",
+  "dependencies": {
+    "jest": "^23.6.0"
+  }
+}
