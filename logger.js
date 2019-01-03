@@ -1,9 +1,13 @@
 'use strict';
 
-const events = require('./events.js');
+const io = require('socket.io-client');
+const socket = io.connect('http://localhost:3000');
 
-events.on('error', handleError);
+socket.on('read', (file)=>{
+  console.log('saved', file);
+});
 
-function handleError(error){
-  console.log('uh oh there\' been an error');
-}
+socket.on('error', (error) => {
+  console.log('uh oh there\' been an error');}
+);
+
