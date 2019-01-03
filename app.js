@@ -12,23 +12,23 @@ let read = util.promisify(fs.readFile);
 let write = util.promisify(fs.writeFile);
 let file = './text.txt';
 
-socket.on('read', (file) =>{
-  alterFile(file);
-});
+// socket.on('read', (file) =>{
+//   alterFile(file);
+// });
 
 const alterFile = (file) => {
   read(file)
     .then((data) => {
+      //console.log(data);
       let text = data.toString().toUpperCase();
       console.log(text);
       write(file, Buffer.from(text))
-        .then(() => {
-          console.log(`${file} saved`);
+        .then(text => {
+          //console.log(text);
+          socket.emit('file-save', text);
         })
-        .then(data => socket.emit('file-save', data))
         .catch(error => socket.emit('file-error', error));
     });
 };
 
 alterFile(file);
-

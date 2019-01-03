@@ -9,17 +9,15 @@ const file = require('./app.js');
 io.on('connection', socket => {
   console.log('new connection', socket.id);
   io.on('file', file =>{
-    socket.emit('read', file);
+    socket.broadcast.emit('read', file);
   });
 
 
   socket.on('file-save', () => {
-    console.log(file);
-    socket.emit('saved', file);
+    socket.broadcast.emit('saved', file);
   });
 
   socket.on('file-error', () =>{
-    console.log(file);
-    socket.emit('error', file);
+    socket.broadcast.emit('error', file);
   });
 });

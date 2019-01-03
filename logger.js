@@ -3,11 +3,11 @@
 const io = require('socket.io-client');
 const socket = io.connect('http://localhost:3000');
 
-socket.on('read', (file)=>{
-  console.log('saved', file);
+socket.on('saved', (data)=>{
+  console.log('data from logger', data);
 });
 
 socket.on('error', (error) => {
-  console.log('uh oh there\' been an error');}
+  console.log('uh oh there\'s been an error');}
 );
 
