@@ -1,42 +1,42 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## Project Name
+## Socket.io 
 
-### Author: Student/Group Name
+### Author: Caity Heath 
 
 ### Links and Resources
-* [repo](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com)
-* [front-end](http://xyz.com)
+* [repo](https://github.com/CaityHeath/08-socket.io)
+
 
 ### Modules
-#### `modulename.js`
-##### Exported Values and Methods
+#### `app.js`
+##### alterFile(file) reads in a file and rewrites it to the same file through events.
 
-###### `foo(thing) -> string`
-Usage Notes or examples
+#### `server.js`
+##### Creates a socket.io server. Contains the file-save and file-error listeners.
+
+#### `logger.js`
+##### Listens for error and saved events.
 
 ###### `bar(array) -> array`
 Usage Notes or examples
 
 ### Setup
-#### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* Clone the repository:
+` git clone https://github.com/CaityHeath/08-socket.io.git `
+* Install node dependencies:
+ `npm i jest socket.io socket.io-client`
+
+
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* Open three different terminal windows. Run the following commands. 
+  * `nodemon server.js`
+  * `nodemon logger.js`
+  * `nodemon app.js`
 
-#### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+* Endpoint: server.js
+  * Logs the text.txt data pulled in by app.js 
 
-#### UML
-Link to an image of the UML for your application and response to events
+
